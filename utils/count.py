@@ -72,3 +72,14 @@ class FileProperties(object):
                 flag = 0
 
         return self.annotation_line_num
+
+    # 计算所有属性并返回
+    def all_count(self):
+        self.char_num = self.count_char_num()
+        self.word_num = self.count_word_num()
+        self.null_line_num = self.count_null_line_num()
+        self.code_line_num = self.count_code_line_num()
+        self.annotation_line_num = self.count_annotation_line_num()
+
+        return [self.char_num, self.word_num, self.line_num, self.null_line_num,
+                self.code_line_num, self.annotation_line_num]

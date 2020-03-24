@@ -14,7 +14,7 @@ def parse_command(command):
 
     # 打开图形界面的指令(一级指令)
     if "-x" in command:
-        orders.get("-x")
+        orders.get("-x")()
     elif len(command) > 2:
         order = command[-2]
         file_name = command[-1]

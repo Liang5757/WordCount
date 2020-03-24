@@ -1,4 +1,6 @@
 from utils.count import *
+from views.main_view import *
+import tkinter as tk
 
 
 # 输出字符数
@@ -25,6 +27,12 @@ def print_code_property(text):
     print("代码行：" + str(file_properties.count_code_line_num()))
 
 
+# 调出图形界面
+def draw_view():
+    root = MainView(tk.Tk())
+
+
+
 def print_error():
     print("指令输入错误")
 
@@ -41,5 +49,5 @@ orders = {
 
     "-s": print_error,
 
-    "-x": print("图像界面")
+    "-x": draw_view
 }
