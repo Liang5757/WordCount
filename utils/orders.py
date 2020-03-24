@@ -3,17 +3,17 @@ from utils.count import *
 
 # 输出字符数
 def print_char_num(text):
-    print("字符数" + FileProperties(text).count_char_num())
+    print("字符数：" + str(FileProperties(text).count_char_num()))
 
 
 # 输出单词数
 def print_word_num(text):
-    print(FileProperties(text).count_word_num())
+    print("词数：" + str(FileProperties(text).count_word_num()))
 
 
 # 输出行数
 def print_line_num(text):
-    print(FileProperties(text).count_line_num())
+    print("行数：" + str(FileProperties(text).count_line_num()))
 
 
 # 输出代码行/空行/注释行

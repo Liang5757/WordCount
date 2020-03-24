@@ -1,5 +1,4 @@
 import os
-import re
 from utils.orders import *
 
 
@@ -63,8 +62,6 @@ def get_file_list(file_name):
                 file_path = item + os.sep + file
                 if os.path.isfile(file_path):
                     file_list.append(file_path)
-
-    print(file_list)
 
     return file_list
 
