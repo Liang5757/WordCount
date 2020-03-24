@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import tkinter.filedialog
-from utils.utils import *
+from utils.utils import read_file
 from utils.count import *
 
 
@@ -43,13 +43,10 @@ class MainView(object):
 
     def file_choose(self):
         file_list = tk.filedialog.askopenfilenames()
-        if len(file_list) != 0:
-            for index, file in enumerate(file_list):
-                text = read_file(file)
-                [char_num, word_num, line_num, null_line_num, code_line_num,
-                 annotation_line_num] = FileProperties(text).all_count()
-                file = file.split("/")[-1]
-                self.data_tree.insert('', index, values=(file, char_num, word_num, line_num,
-                                                         null_line_num, code_line_num, annotation_line_num))
-        else:
-            print(666)
+        for index, file in enumerate(file_list):
+            text = read_file(file)
+            [char_num, word_num, line_num, null_line_num, code_line_num,
+             annotation_line_num] = FileProperties(text).all_count()
+            file = file.split("/")[-1]
+            self.data_tree.insert('', index, values=(file, char_num, word_num, line_num,
+                                                     null_line_num, code_line_num, annotation_line_num))

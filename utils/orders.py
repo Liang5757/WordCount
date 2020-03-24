@@ -1,6 +1,4 @@
-from utils.count import *
-from views.main_view import *
-import tkinter as tk
+from utils.count import FileProperties
 
 
 # 输出字符数
@@ -29,8 +27,10 @@ def print_code_property(text):
 
 # 调出图形界面
 def draw_view():
-    root = MainView(tk.Tk())
+    import tkinter as tk
+    from views.main_view import MainView
 
+    root = MainView(tk.Tk())
 
 
 def print_error():

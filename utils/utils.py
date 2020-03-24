@@ -1,3 +1,4 @@
+import re
 import os
 from utils.orders import *
 
@@ -23,9 +24,9 @@ def parse_command(command):
         # 递归调用的指令
         if "-s" in command:
             if file_list:
-                for file in file_list:
-                    print(file + ":")
-                    text = read_file(file)
+                for file_name in file_list:
+                    print(file_name + ":")
+                    text = read_file(file_name)
                     orders.get(order)(text)
         else:
             print(file_list[0] + ":")
