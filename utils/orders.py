@@ -25,7 +25,11 @@ def print_code_property(text):
     print("代码行：" + str(file_properties.count_code_line_num()))
 
 
-# 命令集
+def print_error():
+    print("指令输入错误")
+
+
+# 单指令命令集
 orders = {
     '-c': print_char_num,
 
@@ -35,7 +39,7 @@ orders = {
 
     "-a": print_code_property,
 
-    '-s': print("递归调用"),
+    "-s": print_error,
 
     "-x": print("图像界面")
 }

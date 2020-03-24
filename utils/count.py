@@ -51,6 +51,7 @@ class FileProperties(object):
     def count_code_line_num(self):
         return self.line_num - self.null_line_num - self.annotation_line_num
 
+    # 计算注释行
     def count_annotation_line_num(self):
         flag = 0
         for line in self.file_text:
